@@ -87,6 +87,13 @@ A minimal Python reference implementation is provided:
 
 See: `reference/python/signn_ed25519_demo.py`
 
+```markdown
+## minimal Python reference Implementation
+
+A minimal Python reference implementation is available:
+
+→ See `reference/python/QUICK_START.md`
+
 ## Regulatory Alignment
 
 An informative mapping to EU AI Act high-risk system requirements is provided:
