@@ -1,0 +1,39 @@
+<!--?xml version="1.0" encoding="UTF-8"?-->
+<svg width="800" height="500" xmlns="http://www.w3.org/2000/svg">
+
+  <style>
+    .box { fill: #0f172a; stroke: #2563eb; stroke-width: 2; rx: 8; }
+    .text { fill: white; font-family: Arial, sans-serif; font-size: 14px; text-anchor: middle; }
+    .arrow { stroke: #94a3b8; stroke-width: 2; marker-end: url(#arrowhead); }
+  </style>
+
+  <defs>
+    <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#94a3b8"></polygon>
+    </marker>
+  </defs>
+
+  <!-- Boxes -->
+  <rect x="250" y="30" width="300" height="60" class="box"></rect>
+  <text x="400" y="65" class="text">AI Model</text>
+
+  <rect x="250" y="120" width="300" height="80" class="box"></rect>
+  <text x="400" y="150" class="text">Decision Envelope</text>
+  <text x="400" y="170" class="text">(Model + Policy + Human Metadata)</text>
+
+  <rect x="250" y="230" width="300" height="60" class="box"></rect>
+  <text x="400" y="265" class="text">Canonical JSON + Hash</text>
+
+  <rect x="250" y="320" width="300" height="60" class="box"></rect>
+  <text x="400" y="355" class="text">Ed25519 Signature</text>
+
+  <rect x="250" y="410" width="300" height="60" class="box"></rect>
+  <text x="400" y="445" class="text">Signed Decision Artifact</text>
+
+  <!-- Arrows -->
+  <line x1="400" y1="90" x2="400" y2="120" class="arrow"></line>
+  <line x1="400" y1="200" x2="400" y2="230" class="arrow"></line>
+  <line x1="400" y1="290" x2="400" y2="320" class="arrow"></line>
+  <line x1="400" y1="380" x2="400" y2="410" class="arrow"></line>
+
+</svg>
