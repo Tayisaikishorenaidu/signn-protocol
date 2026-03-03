@@ -77,6 +77,16 @@ This creates regulatory ambiguity, audit friction, and liability exposure.
 
 The envelope MUST be canonicalized, hashed, and signed using an approved cryptographic algorithm (Ed25519 recommended).
 
+## Reference Implementation
+
+A minimal Python reference implementation is provided:
+
+- Canonicalizes the decision envelope
+- Signs with Ed25519
+- Verifies signature over the canonicalized envelope
+
+See: `reference/python/signn_ed25519_demo.py`
+
 ## Regulatory Alignment
 
 An informative mapping to EU AI Act high-risk system requirements is provided:
