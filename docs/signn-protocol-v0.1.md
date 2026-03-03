@@ -51,7 +51,6 @@ All AI decisions MUST be encapsulated in a canonical JSON envelope prior to sign
 
 ### Required Fields
 
-json
 {
   "decision_id": "string",
   "issuer": "string",
@@ -73,3 +72,79 @@ json
   "issued_at": "ISO-8601 timestamp",
   "expires_at": "ISO-8601 timestamp"
 }
+
+The envelope MUST be:
+
+Deterministically serialized
+Hashed using SHA-256
+Signed using an approved digital signature algorithm
+
+## 5. Cryptographic Requirements
+
+Recommended:
+
+Ed25519 for digital signatures
+SHA-256 for hashing
+Deterministic JSON canonicalization
+Regular key rotation
+
+The signature object MUST include:
+
+{
+  "alg": "Ed25519",
+  "kid": "key-id",
+  "sig": "base64-signature"
+}
+
+Private keys SHOULD be protected via HSM, TPM, or secure KMS.
+
+## 6. Authority Hierarchy
+
+The SIGNN trust model is hierarchical:
+
+SIGNN Root Authority
+→ Domain Authority
+→ Issuer Authority
+→ Signed Decision
+
+Public key discovery MUST be supported via:
+
+https://issuer-domain/.well-known/signn-keys.json
+
+## 7. Verification Procedure
+
+A compliant verifier MUST:
+
+Validate envelope structure
+Confirm expires_at has not passed
+Retrieve public key using kid
+Verify signature
+Check revocation status
+Confirm policy hash integrity
+Only after successful verification SHALL the decision be treated as valid.
+
+## 8. Revocation Model
+
+Two revocation layers are defined:
+Decision Revocation List (DRL)
+Authority Revocation List (ARL)
+Revoked decisions MUST be treated as invalid even if signature verification succeeds.
+
+## 9. Security Considerations
+
+The SIGNN Protocol:
+
+Does not guarantee correctness of AI outputs
+Does not replace regulatory certification
+Does not define model training standards
+It provides cryptographic accountability infrastructure only.
+
+## 10. Future Work
+
+Future versions MAY include:
+Transparency log integration
+Formal JSON Canonicalization Scheme adoption
+Domain-specific compliance profiles
+Standardized audit APIs
+
+End of Specification.
