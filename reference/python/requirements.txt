@@ -1,2 +1,15 @@
 
 cryptography>=42.0.0
+
+✅ Quick run commands
+cd reference/python
+python -m venv .venv
+source .venv/bin/activate   # Windows: .venv\Scripts\activate
+pip install -r requirements.txt
+python signn_ed25519_demo.py
+
+You’ll see:
+
+Signature valid: True
+
+printed signed object containing envelope + signature
