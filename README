@@ -72,3 +72,42 @@ This creates regulatory ambiguity, audit friction, and liability exposure.
   "issued_at": "ISO-8601 timestamp",
   "expires_at": "ISO-8601 timestamp"
 }
+
+The envelope MUST be canonicalized, hashed, and signed using an approved cryptographic algorithm (Ed25519 recommended).
+
+Regulatory Alignment
+
+An informative mapping to EU AI Act high-risk system requirements is provided:
+
+→ See: EU AI Act Mapping Appendix
+
+This mapping demonstrates structural alignment for:
+
+      - Traceability
+    
+      - Logging & Record-Keeping
+    
+      - Human Oversight
+    
+      - Post-Market Monitoring
+
+Repository Structure
+
+      - signn-protocol-v0.1.md — Full Specification
+      
+      - eu-ai-act-mapping.md — Regulatory Alignment Appendix
+      
+      - LICENSE — Apache 2.0
+
+Governance
+
+The SIGNN Protocol is proposed as an open specification.
+Future governance may be transitioned to a neutral working group.
+
+SIGNN (company) acts as the initial reference implementer.
+
+Status
+
+This is an early draft (v0.1).
+Feedback, critique, and formal review are welcome.
+
