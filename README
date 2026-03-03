@@ -1,0 +1,74 @@
+# SIGNN Protocol
+
+**Version:** v0.1 (Draft)  
+**Status:** Open Specification Proposal  
+**License:** Apache 2.0  
+
+---
+
+## Overview
+
+The SIGNN Protocol defines a cryptographic framework for binding AI-generated decisions to verifiable metadata, including:
+
+- Model identity and version
+- Governance policy binding
+- Human oversight metadata
+- Timestamp and expiry enforcement
+- Revocation capability
+
+While TLS/HTTPS secures transport channels, it does not provide cryptographic accountability for AI decision artifacts.  
+The SIGNN Protocol introduces a signed decision envelope format enabling post-execution verification and auditability.
+
+The protocol is designed for high-risk AI systems operating in regulated environments.
+
+---
+
+## Problem Statement
+
+High-risk AI systems currently lack a standardized mechanism to prove:
+
+- Which model version produced a decision  
+- Whether governance policies were applied  
+- Whether required human oversight occurred  
+- Whether a decision has expired or been revoked  
+- Whether the output has been altered after issuance  
+
+This creates regulatory ambiguity, audit friction, and liability exposure.
+
+---
+
+## Core Design Principles
+
+1. Cryptographic Integrity  
+2. Non-Repudiation  
+3. Policy Binding  
+4. Human-in-the-Loop Accountability  
+5. Expiry & Revocation  
+6. Open and Vendor-Neutral Standard  
+
+---
+
+## Decision Envelope (Simplified Example)
+
+```json
+{
+  "decision_id": "string",
+  "issuer": "string",
+  "subject": "string",
+  "model": {
+    "name": "string",
+    "version": "string",
+    "hash": "sha256 string"
+  },
+  "policy": {
+    "id": "string",
+    "hash": "sha256 string"
+  },
+  "human_validation": {
+    "required": true,
+    "performed": true
+  },
+  "risk_score": 0.0,
+  "issued_at": "ISO-8601 timestamp",
+  "expires_at": "ISO-8601 timestamp"
+}
