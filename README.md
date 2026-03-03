@@ -53,28 +53,28 @@ This creates regulatory ambiguity, audit friction, and liability exposure.
 
 ## Decision Envelope (Simplified Example)
 
-```json
-{
-  "decision_id": "string",
-  "issuer": "string",
-  "subject": "string",
-  "model": {
+
+    {
+      "decision_id": "string",
+      "issuer": "string",
+      "subject": "string",
+      "model": {
     "name": "string",
     "version": "string",
     "hash": "sha256 string"
-  },
-  "policy": {
+    },
+    "policy": {
     "id": "string",
     "hash": "sha256 string"
-  },
-  "human_validation": {
+    },
+    "human_validation": {
     "required": true,
     "performed": true
-  },
-  "risk_score": 0.0,
-  "issued_at": "ISO-8601 timestamp",
-  "expires_at": "ISO-8601 timestamp"
-}
+    },
+    "risk_score": 0.0,
+    "issued_at": "ISO-8601 timestamp",
+    "expires_at": "ISO-8601 timestamp"
+    }
 
 The envelope MUST be canonicalized, hashed, and signed using an approved cryptographic algorithm (Ed25519 recommended).
 
@@ -82,18 +82,23 @@ The envelope MUST be canonicalized, hashed, and signed using an approved cryptog
 
 A minimal Python reference implementation is provided:
 
-- Canonicalizes the decision envelope
-- Signs with Ed25519
-- Verifies signature over the canonicalized envelope
+     -  Canonicalizes the decision envelope
+     -  Signs with Ed25519
+     -  Verifies signature over the canonicalized envelope
 
-See: `reference/python/signn_ed25519_demo.py`
+See:     
 
-```markdown
+    reference/python/signn_ed25519_demo.py
+
 ## minimal Python reference Implementation
 
 A minimal Python reference implementation is available:
 
-→ See `reference/python/QUICK_START.md`
+    - See reference/python/QUICK_START.md
+
+## Architecture Overview
+
+![SIGNN Architecture](docs/signn-architecture.svg)
 
 ## Regulatory Alignment
 
