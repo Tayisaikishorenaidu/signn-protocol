@@ -51,7 +51,7 @@ All AI decisions MUST be encapsulated in a canonical JSON envelope prior to sign
 
 ### Required Fields
 
-``json
+json
 {
   "decision_id": "string",
   "issuer": "string",
