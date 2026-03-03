@@ -7,6 +7,21 @@
 **License:** Apache 2.0  
 
 ---
+---
+
+## About the Author
+
+Tayi Saikishore is the CEO of DeployH AI and Founder of SIGNN.
+
+His work focuses on building operational AI systems for regulated environments, with an emphasis on readiness, human oversight, and execution accountability.
+
+The SIGNN Protocol emerges from practical deployment experience in high-risk domains, where AI decisions require traceability, governance binding, and verifiable execution context.
+
+The concept of “Authority as Readiness Execution” reflects a design philosophy: authority in AI systems should derive not from model capability alone, but from measurable oversight, policy enforcement, and cryptographic accountability.
+
+https://www.linkedin.com/in/saikishorenaidu/
+
+---
 
 ## 1. Introduction
 
